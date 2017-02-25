@@ -20,3 +20,4 @@ responses.json
 migrations/
 .idea/
 .DS_Store
+maproulette.egg-info/
