@@ -10,7 +10,6 @@ setup(
         'Flask-KVSession==0.6.2',
         'Flask-OAuthlib==0.9.3',
         'Flask-SQLAlchemy==2.1',
-        'Flask-Runner==2.1.1',
         'Flask-Migrate==2.0.3',
         'GeoAlchemy2==0.4.0',
         'SQLAlchemy==1.1.5',

@@ -15,9 +15,6 @@ OSM = {
     'consumer_secret': 'CHANGE_THIS'
 }
 
-# Set debugging mode. This is detected by looking at the 'runserver' argument passed to manage.py
-DEBUG = (len(sys.argv)>1 and sys.argv[1] == 'runserver')
-
 # This is the buffer for looking for tasks / challenges near the given
 # lon/lat
 NEARBUFFER = 0.01

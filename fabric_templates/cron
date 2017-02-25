@@ -1,4 +1,5 @@
 #!/bin/bash
 export MAPROULETTE_SETTINGS=/srv/www/{{instance}}/config.py
 source /srv/www/{{instance}}/virtualenv/bin/activate
-python /srv/www/{{instance}}/htdocs/maproulette/manage.py clean_stale_tasks >> /tmp/clean_stale_tasks.log
+export FLASK_APP=maproulette
+flask cleanstaletasks >> /tmp/clean_stale_tasks.log

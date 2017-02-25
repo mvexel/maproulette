@@ -102,8 +102,7 @@ def git_change_branch(instance, branch):
 def flask_manage(instance, command):
     dirname = "/srv/www/%s" % instance
     cmd = "export MAPROULETTE_SETTINGS=%s/config.py &&\
-    source %s/virtualenv/bin/activate && python\
-    manage.py %s" % (dirname, dirname, command)
+    source %s/virtualenv/bin/activate && export FLASK_APP=maproulette && flask %s" % (dirname, dirname, command)
     with cd("%s/htdocs/maproulette" % dirname):
         sudo(cmd, user="www-data")
 
@@ -299,7 +298,7 @@ def create_deployment(instance, is_dev=True, branch=None):
     setup_nginx_file(instance)
     setup_cron(instance)
     setup_config_file(instance, is_dev)
-    flask_manage(instance, command='create_db')
+    flask_manage(instance, command='createdb')
     install_bower_dependencies(instance)
     compile_jsx(instance)
     service('uwsgi', 'restart')
